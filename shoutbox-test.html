@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Shoutbox-Test</title>
+        <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+        <script type="text/javascript" src="js/underscore-min.js"></script>
+        <script type="text/javascript" src="js/backbone-min.js"></script>
+        <script type="text/javascript" src="js/handlebars.js"></script>
+        <script type="text/javascript" src="js/c-portal-shoutbox.js"></script>
+    </head>
+    <body>
+        <h1>Shoutbox</h1>
+        <div id="shoutbox_container"></div>
+        <!--<table class="table table-condensed table-striped">
+            <thead>
+            <tr id="blub">
+                <td col_span="2">shoutbox: </td>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr>
+                <td></td>
+                <td>Vielleicht könnte man ja hier über die Ergenisse des Ingress Stammtischs am Freitag etwas schreiben. Ich kann leider nicht anwesend sein.</td>
+            </tr>
+
+            <tr>
+                <td>dazz:</td>
+                <td>war schick</td>
+            </tr>
+
+            </tbody>
+        </table>-->
+
+        <script id="shout_template" type="text/x-handlebars-template">
+            <tr>
+                <td>{{ nickname}}</td>
+                <td>{{ text }}</td>
+            </tr>
+        </script>
+
+        <script id="shoutbox_template" type="text/x-handlebars-template">
+            <table class="table table-condensed table-striped">
+                <thead>
+                <tr>
+                    <td col_span="2">gerenderte shoutbox: </td>
+                </tr>
+                </thead>
+                <tbody class="bla">
+                </tbody>
+            </table>
+        </script>
+    </body>
+
+
+</html>
