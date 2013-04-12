@@ -5,3 +5,90 @@
 #id_honeypot {
     display: none;
 }
+
+#tablehead th {
+  color: #33b5e5;
+}
+
+.table td.alignright {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+@-webkit-keyframes blinker { 
+  from { opacity: 1.0; } 
+  to { opacity: 0.0; } 
+} 
+
+blink { 
+  text-decoration: blink;
+  -webkit-animation-name: blinker; 
+  -webkit-animation-iteration-count: infinite; 
+  -webkit-animation-timing-function: cubic-bezier(1.0,0,0,1.0); 
+  -webkit-animation-duration: 1s; 
+} 
+
+.terminal {
+  margin: 8px auto;
+  cursor: text;
+  background-color: black;
+  font-family: Andale Mono, monospace;  line-height: 1em;
+  font-size:12px;
+  /*min-height:130px;*/
+  background:#000;
+  padding:10px;
+  line-height:1.5em;
+  text-align: left;
+  /*color: #63de00!important;*/
+  /*text-color: #33b5e5;*/
+  text-color: #3ab6e4;
+  border-style:solid;
+  border-width:2px;
+  overflow: auto; 
+  position: relative;
+  left: 0;
+  right: 0;
+  /*width:100%;*/
+}
+
+@media screen and (max-width: 760px) {
+  .terminal { 
+    width: auto;
+    margin: 8px -20px;
+  }
+}
+
+.terminal div.thanks,
+.terminal div.thanks a {
+  color: #0F0;
+}
+
+.terminal div.protest,
+.terminal div.protest a {
+  color: #F00;
+}
+
+.terminal div.protest a.btn,
+.terminal div.thanks a.btn {
+  color: #FFF;
+}
+
+.terminal div {
+  color: #33b5e5;
+}
+
+
+.navbar-inner div.logo {
+  z-index: 1;
+  background-image: url('/static/c-beam-touch-icon-57-precomposed.png');
+  background-size:40px 40px;
+  background-repeat:no-repeat;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 8px;
+  top: 4px;
+}
