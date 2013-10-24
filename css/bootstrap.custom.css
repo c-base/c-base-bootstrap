@@ -92,3 +92,44 @@ blink {
   left: 8px;
   top: 4px;
 }
+
+.btn-red {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #eb0000;
+  background-image: -moz-linear-gradient(top, #ff0000, #cc0000);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ff0000), to(#cc0000));
+  background-image: -webkit-linear-gradient(top, #ff0000, #cc0000);
+  background-image: -o-linear-gradient(top, #ff0000, #cc0000);
+  background-image: linear-gradient(to bottom, #ff0000, #cc0000);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff0000', endColorstr='#ffcc0000', GradientType=0);
+  border-color: #cc0000 #cc0000 #800000;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #cc0000;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-red:hover,
+.btn-red:active,
+.btn-red.active,
+.btn-red.disabled,
+.btn-red[disabled] {
+  color: #ffffff;
+  background-color: #cc0000;
+  *background-color: #b30000;
+}
+.btn-red:active,
+.btn-red.active {
+  background-color: #990000 \9;
+}
+
+input[type=range] {
+      /*-webkit-appearance: slider-vertical;
+      -moz-transfrom: rotate(270deg);
+      height: 300px;*/
+      width: 100%;
+      max-width: 400px;
+}
+
