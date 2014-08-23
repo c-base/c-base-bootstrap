@@ -1,0 +1,184 @@
+.extra-line-spacing {
+	line-height: 32px;
+}
+
+#id_honeypot {
+    display: none;
+}
+
+#tablehead th {
+  color: #33b5e5;
+}
+
+.table td.alignright {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+@-webkit-keyframes blinker { 
+  from { opacity: 1.0; } 
+  to { opacity: 0.0; } 
+} 
+
+blink { 
+  text-decoration: blink;
+  -webkit-animation-name: blinker; 
+  -webkit-animation-iteration-count: infinite; 
+  -webkit-animation-timing-function: cubic-bezier(1.0,0,0,1.0); 
+  -webkit-animation-duration: 1s; 
+}
+
+.terminal {
+  margin: 0px 0px auto;
+  cursor: text;
+  background-color: black;
+  font-family: Andale Mono, monospace;  line-height: 1em;
+  font-size:12px;
+  /*min-height:130px;*/
+  background:#000;
+  padding:10px;
+  line-height:1.5em;
+  text-align: left;
+  /*color: #63de00!important;*/
+  /*text-color: #33b5e5;*/
+  text-color: #3ab6e4;
+  border-style:solid;
+  border-width:2px;
+  border-color:#3ab6e4 #3ab6e4;
+  overflow: auto; 
+  position: relative;
+  left: 0;
+  right: 0;
+  /*width:100%;*/
+}
+
+.transparent {
+  background:rgba(0,0,0,0.6);
+}
+
+@media screen and (max-width: 760px) {
+  .terminal { 
+    width: auto;
+    margin: 8px -20px;
+  }
+}
+
+.terminal div.thanks,
+.terminal div.thanks a {
+  color: #0F0;
+}
+
+.terminal div.protest,
+.terminal div.protest a {
+  color: #F00;
+}
+
+.terminal div.protest a.btn,
+.terminal div.thanks a.btn {
+  color: #FFF;
+}
+
+.terminal div {
+  color: #33b5e5;
+}
+
+
+.navbar-inner div.logo {
+  z-index: 1;
+  background-image: url('/static/c-beam-touch-icon-57-precomposed.png');
+  background-size:40px 40px;
+  background-repeat:no-repeat;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 8px;
+  top: 4px;
+}
+
+.btn-red {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #eb0000;
+  background-image: -moz-linear-gradient(top, #ff0000, #cc0000);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ff0000), to(#cc0000));
+  background-image: -webkit-linear-gradient(top, #ff0000, #cc0000);
+  background-image: -o-linear-gradient(top, #ff0000, #cc0000);
+  background-image: linear-gradient(to bottom, #ff0000, #cc0000);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff0000', endColorstr='#ffcc0000', GradientType=0);
+  border-color: #cc0000 #cc0000 #800000;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #cc0000;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-red:hover,
+.btn-red:active,
+.btn-red.active,
+.btn-red.disabled,
+.btn-red[disabled] {
+  color: #ffffff;
+  background-color: #cc0000;
+  *background-color: #b30000;
+}
+.btn-red:active,
+.btn-red.active {
+  background-color: #990000 \9;
+}
+
+input[type=range] {
+      /*-webkit-appearance: slider-vertical;
+      -moz-transfrom: rotate(270deg);
+      height: 300px;*/
+      width: 100%;
+      max-width: 400px;
+}
+
+.row {
+  margin-left: 0px;
+}
+
+body {
+    background-color: #060606;
+    color: #999999;
+    font-family: lucida console,andale mono,courier new,monospace;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: lucida console,andale mono,courier new,monospace;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+
+.btn {
+  white-space: normal;
+}
+
+table {
+  background-color: transparent;
+}
+
+td {
+  padding: 10px;
+}
+
