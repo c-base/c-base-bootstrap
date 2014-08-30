@@ -201,6 +201,33 @@ td {
 .container-fluid > .navbar-header,
 .container > .navbar-collapse,
 .container-fluid > .navbar-collapse {
-    margin-left: 0;
+    margin-left: 16px;
     margin-right: 0;
 }
+
+@media screen and (max-width: 767px) {
+    .btn-block-mobile {
+        display: block;
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .terminal {
+      margin: 0 0;
+    }
+
+    h1 {
+        font-size: 16pt;
+        font-weight: bold;
+    }
+    .container {
+      margin-left: -16px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .btn-block {
+        overflow: hidden;
+    }
+}
+
