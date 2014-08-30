@@ -182,3 +182,25 @@ td {
   padding: 10px;
 }
 
+.btn-default {
+    background-color: #292929;
+    background-image: linear-gradient(to bottom, #333333, #191919);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.navbar .nav li a:hover,
+.navbar .nav .active a:hover {
+    border-bottom: 1px solid #33b5e5;
+    margin-bottom: -1px;
+}
+
+.container > .navbar-header,
+.container-fluid > .navbar-header,
+.container > .navbar-collapse,
+.container-fluid > .navbar-collapse {
+    margin-left: 0;
+    margin-right: 0;
+}
