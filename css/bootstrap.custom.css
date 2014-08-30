@@ -196,13 +196,14 @@ td {
     border-bottom: 1px solid #33b5e5;
     margin-bottom: -1px;
 }
-
 .container > .navbar-header,
 .container-fluid > .navbar-header,
 .container > .navbar-collapse,
 .container-fluid > .navbar-collapse {
-    margin-left: 16px;
+    margin-left: 4px;
+    /*
     margin-right: 0;
+    */
 }
 
 @media screen and (max-width: 767px) {
@@ -222,10 +223,11 @@ td {
     }
     .container {
       margin-left: -16px;
+    /*
       padding-left: 0;
       padding-right: 0;
+    */
     }
-
     .btn-block {
         overflow: hidden;
     }
