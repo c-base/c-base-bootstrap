@@ -18,13 +18,10 @@ In your html
 ```html
 <body>
   <head>
-    <link href="/static/c-base-bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="/static/c-base-bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/static/c-base-bootstrap/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <!-- all your happy content -->
-  <script src="/static/js/jquery.min.js"></script>
-  <script src="/static/c-base-bootstrap/js/bootstrap.js"></script>
-  <script src="/static/c-base-bootstrap/js/bootstrap-transitions.js"></script>
-  <script src="/static/c-base-bootstrap/js/bootstrap-dropdown.js"></script>
+  <script src="/static/c-base-bootstrap/js/jquery.min.js"></script>
+  <script src="/static/c-base-bootstrap/js/bootstrap.min.js"></script>
 </body>
 ```
