@@ -18,6 +18,10 @@
   text-align: center;
 }
 
+.right {
+  text-align: right;
+}
+
 @-webkit-keyframes blinker { 
   from { opacity: 1.0; } 
   to { opacity: 0.0; } 
@@ -234,3 +238,110 @@ td {
     }
 }
 
+@font-face {
+      font-family: "ceva";
+      src: url('/static/c-base-bootstrap/fonts/ceva-cm.ttf');
+      font-style: normal;
+      font-weight: normal;
+}
+
+.ceva {
+    font-family: "ceva";
+}
+
+.mechterminal {
+    font-size: 20pt;
+}
+
+.mechterminal .btn {
+    font-size: 33pt;
+    color: white;
+}
+
+#barstatus {
+}
+#clock {
+    text-align: center;
+    font-size: 32pt;
+    height: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.mpd {
+    font-size: 20pt;
+}
+
+.position-display {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.mpd-widget > .row {
+  margin-right: 0px;
+}
+
+.mpdcontrol {
+  margin-top: 8px;
+}
+
+.mpdcontrol > .column:nth-child(1) {
+  padding-left: 0px;
+}
+
+.mpdcontrol > .column:nth-child(2) {
+  padding-right: 0px;
+}
+
+div > .slider {
+  max-width: 800px;
+  width: 100%;
+  display: inline-block;
+}
+
+.disabled {
+  color: #404040;
+}
+
+.nobr   {
+  white-space:nowrap;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.mpdstatus {
+  //background-color: black;
+  color: #3ab6e4;
+  //padding-top: 16px;
+  //padding-bottom: 16px;
+  //margin-bottom: 8px;
+  //line-height: 38px;
+  //border-style:solid;
+  //border-width:2px;
+  //border-color:#3ab6e4 #3ab6e4;
+}
+
+.volumecontrol > .slider {
+    display: table-cell;
+    float: none;
+    width: 100%;
+    height: 40px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.volumecontrol > .btn-vol {
+    display: table-cell;
+    float: none;
+    width: 64px;
+}
+
+.volumecontrol {
+    border-collapse: separate;
+    display: table;
+    table-layout: inherit;
+}
