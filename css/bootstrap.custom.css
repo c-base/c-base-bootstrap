@@ -167,6 +167,14 @@ a:hover {
   text-decoration: underline;
 }
 
+/* ...but never navigation entries, dropdown items or buttons */
+.navbar a:hover,
+.nav-link:hover,
+.dropdown-item:hover,
+.btn:hover {
+  text-decoration: none;
+}
+
 h1,
 h2,
 h3,
