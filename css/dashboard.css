@@ -6,7 +6,7 @@ body {
     border-bottom: 1px solid #eee;
     padding-bottom: 10px;
 }
-.navbar-fixed-top {
+.navbar.fixed-top {
     border: 0 none;
 }
 .sidebar {
@@ -32,12 +32,12 @@ body {
     margin-left: -20px;
     margin-right: -21px;
 }
-.nav-sidebar > li > a {
+.nav-sidebar .nav-link {
     padding-left: 20px;
     padding-right: 20px;
 }
-.nav-sidebar > .active > a, .nav-sidebar > .active > a:hover, .nav-sidebar > .active > a:focus {
-    background-color: #428bca;
+.nav-sidebar .nav-link.active, .nav-sidebar .nav-link.active:hover, .nav-sidebar .nav-link.active:focus {
+    background-color: var(--bs-primary);
     color: #fff;
 }
 .main {

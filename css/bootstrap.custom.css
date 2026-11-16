@@ -143,17 +143,28 @@ input[type=range] {
       max-width: 400px;
 }
 
-.row {
-  margin-left: 0px;
+/* ---------------------------------------------------------------------------
+ * c-base look on top of Bootswatch Cyborg for Bootstrap 5.
+ * Bootstrap 5 is driven by CSS variables, so the base look is set there.
+ * ------------------------------------------------------------------------- */
+:root {
+  --cbase-font: "Lucida Console", "Andale Mono", "Courier New", monospace;
+  --cbase-accent: #33b5e5;
+  --bs-body-bg: #060606;
+  --bs-body-color: #999999;
+  --bs-body-font-family: var(--cbase-font);
+  --bs-body-font-size: 14px;
+  --bs-body-line-height: 1.43;
+  --bs-heading-color: #ffffff;
 }
 
-body {
-    background-color: #060606;
-    color: #999999;
-    font-family: lucida console,andale mono,courier new,monospace;
-    font-size: 14px;
-    line-height: 20px;
-    margin: 0;
+/* Bootstrap 3 only underlined links on hover */
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 h1,
@@ -168,19 +179,54 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: lucida console,andale mono,courier new,monospace;
+  font-family: var(--cbase-font);
   font-weight: 500;
   line-height: 1.1;
   color: #ffffff;
 }
 
+/* Bootstrap 3 spacing: headings keep some air above them */
+h1, h2, h3, .h1, .h2, .h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
 
+h4, h5, h6, .h4, .h5, .h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* controls stay at the 14px of the Bootstrap 3 theme */
 .btn {
+  --bs-btn-font-size: 14px;
   white-space: normal;
 }
 
-table {
-  background-color: transparent;
+.form-control,
+.form-select {
+  font-size: 14px;
+}
+
+.form-label,
+label {
+  font-weight: 700;
+}
+
+.navbar {
+  --bs-navbar-brand-font-size: 18px;
+  --bs-nav-link-font-size: 14px;
+  border-bottom: 1px solid #282828;
+}
+
+.dropdown-menu {
+  --bs-dropdown-font-size: 14px;
+}
+
+/* transparent cells so the station picture shows through; white text as before */
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-accent-bg: transparent;
+  --bs-table-color: #ffffff;
 }
 
 td {
@@ -188,28 +234,44 @@ td {
   vertical-align: text-top;
 }
 
-.btn-default {
-    background-color: #292929;
-    background-image: linear-gradient(to bottom, #333333, #191919);
-    background-repeat: repeat-x;
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    color: #ffffff;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+/* Bootstrap 5 calls the neutral button .btn-secondary; .btn-default stays as
+   an alias so existing markup keeps the c-base look. */
+.btn-default,
+.btn-secondary {
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: #292929;
+  --bs-btn-border-color: rgba(0, 0, 0, 0.25);
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: #191919;
+  --bs-btn-hover-border-color: rgba(0, 0, 0, 0.25);
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: #111111;
+  --bs-btn-active-border-color: rgba(0, 0, 0, 0.25);
+  --bs-btn-disabled-color: #ffffff;
+  --bs-btn-disabled-bg: #292929;
+  --bs-btn-disabled-border-color: rgba(0, 0, 0, 0.25);
+  background-image: linear-gradient(to bottom, #333333, #191919);
+  background-repeat: repeat-x;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
-.navbar .nav li a:hover,
-.navbar .nav .active a:hover {
-    border-bottom: 1px solid #33b5e5;
-    margin-bottom: -1px;
+.btn-default:hover,
+.btn-default:active,
+.btn-secondary:hover,
+.btn-secondary:active {
+  background-image: none;
 }
-.container > .navbar-header,
-.container-fluid > .navbar-header,
-.container > .navbar-collapse,
-.container-fluid > .navbar-collapse {
-    margin-left: 4px;
-    /*
-    margin-right: 0;
-    */
+
+/* .btn-block was removed in Bootstrap 4/5 (use .d-grid or .w-100 in new markup) */
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active:hover {
+  border-bottom: 1px solid var(--cbase-accent);
+  margin-bottom: -1px;
 }
 
 @media screen and (max-width: 767px) {
@@ -226,13 +288,6 @@ td {
     h1 {
         font-size: 16pt;
         font-weight: bold;
-    }
-    .container {
-      margin-left: -16px;
-    /*
-      padding-left: 0;
-      padding-right: 0;
-    */
     }
     .btn-block {
         overflow: hidden;
@@ -315,15 +370,15 @@ div > .slider {
 }
 
 .mpdstatus {
-  //background-color: black;
+  /* background-color: black; */
   color: #3ab6e4;
-  //padding-top: 16px;
-  //padding-bottom: 16px;
-  //margin-bottom: 8px;
-  //line-height: 38px;
-  //border-style:solid;
-  //border-width:2px;
-  //border-color:#3ab6e4 #3ab6e4;
+  /* padding-top: 16px; */
+  /* padding-bottom: 16px; */
+  /* margin-bottom: 8px; */
+  /* line-height: 38px; */
+  /* border-style:solid; */
+  /* border-width:2px; */
+  /* border-color:#3ab6e4 #3ab6e4; */
 }
 
 .volumecontrol > .slider {
