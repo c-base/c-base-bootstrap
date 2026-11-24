@@ -8,6 +8,8 @@ c-base bootstrap cyborg theme
   with the Google Fonts import removed
 * `css/bootstrap.custom.css` – the c-base look: monospace type, `.terminal`,
   `.btn-red`, c-base buttons, transparent tables
+* `css/c-base-amber.css` + `js/c-base-theme.js` – optional amber colour variant
+  that visitors can switch to, see below
 * `css/glyphicons.css` – optional, keeps `glyphicon glyphicon-*` icons working
   (Bootstrap 4+ no longer ships an icon font)
 
@@ -35,6 +37,42 @@ In your html
 
 `js/jquery.min.js` is still included for scripts that use it; Bootstrap itself
 no longer needs it.
+
+### amber colour variant
+
+An optional second look, modelled on the
+[c-beam AI interface](https://ai.cbrp3.c-base.org/): amber on black, scanlines,
+glowing frames and headings in Orbitron. Nothing changes for sites that do not
+load it.
+
+```html
+<head>
+  …
+  <link href="/static/c-base-bootstrap/css/c-base-amber.css" rel="stylesheet">
+  <script src="/static/c-base-bootstrap/js/c-base-theme.js"></script>
+</head>
+```
+
+```html
+<button type="button" class="nav-link" data-cbase-theme-toggle>colour:
+  <span class="cbase-if-default">blue</span><span class="cbase-if-amber">amber</span>
+</button>
+```
+
+* The variant is active while `<html data-cbase-theme="amber">` is set. Use
+  `[data-cbase-theme="amber"] …` for your own amber rules.
+* `js/c-base-theme.js` sets the attribute from `localStorage` before the page is
+  painted (load it in `<head>`, without `defer`) and switches on a click on any
+  element with `data-cbase-theme-toggle`. The choice holds per browser and site.
+* `.cbase-if-default` / `.cbase-if-amber` show their content only in that variant.
+* The colours are available as `--cbase-amber`, `--cbase-amber-deep`,
+  `--cbase-amber-light`, `--cbase-amber-bright` and `--cbase-amber-dim`.
+* Orbitron (`fonts/Orbitron.ttf`) is under the SIL Open Font License, see
+  `fonts/Orbitron-OFL.txt`. The body type stays the c-base monospace.
+* Covered: navbar, dropdowns, cards, `.btn-primary`, `.btn-secondary` /
+  `.btn-default`, `.btn-outline-primary`, forms, tables, `.terminal`,
+  pagination, list groups, pills and progress bars. Success, danger, warning
+  and `.btn-red` keep their colours.
 
 ### migrating a site from the Bootstrap 3 version
 

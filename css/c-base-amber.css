@@ -1,0 +1,325 @@
+/* ---------------------------------------------------------------------------
+ * c-base amber: an optional colour variant for the c-base theme, modelled on
+ * the c-beam AI interface (https://ai.cbrp3.c-base.org/) – amber on black,
+ * scanlines, glowing borders, Orbitron headings.
+ *
+ * Load it after cyborg.min.css and bootstrap.custom.css. Nothing changes until
+ * <html data-cbase-theme="amber"> is set; js/c-base-theme.js does that and
+ * remembers the choice. Without the attribute the theme stays blue.
+ * ------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Orbitron";
+  src: url("../fonts/Orbitron.ttf") format("truetype");
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+/* Label of a switch: show the name of the variant that is active.
+   <span class="cbase-if-default">blue</span><span class="cbase-if-amber">amber</span> */
+.cbase-if-amber,
+[data-cbase-theme="amber"] .cbase-if-default {
+  display: none;
+}
+
+[data-cbase-theme="amber"] .cbase-if-amber {
+  display: inline;
+}
+
+:root[data-cbase-theme="amber"] {
+  --cbase-accent: #ff8800;
+  --cbase-amber: #ff8800;         /* text, borders, primary buttons */
+  --cbase-amber-deep: #ff6600;    /* frames */
+  --cbase-amber-light: #ffaa44;   /* headings, links */
+  --cbase-amber-bright: #ffcc66;  /* highlighted text, input */
+  --cbase-amber-dim: #a35200;     /* placeholders, disabled */
+  --cbase-amber-glow: rgba(255, 136, 0, 0.5);
+
+  --bs-body-bg: #000000;
+  --bs-body-color: #ff8800;
+  --bs-heading-color: #ffaa44;
+  --bs-secondary-color: rgba(255, 136, 0, 0.7);
+  --bs-primary: #ff8800;
+  --bs-primary-rgb: 255, 136, 0;
+  --bs-link-color: #ffaa44;
+  --bs-link-color-rgb: 255, 170, 68;
+  --bs-link-hover-color: #ffcc66;
+  --bs-link-hover-color-rgb: 255, 204, 102;
+  --bs-border-color: rgba(255, 102, 0, 0.3);
+  --bs-code-color: #ffcc66;
+  --bs-focus-ring-color: rgba(255, 136, 0, 0.4);
+  accent-color: #ff8800;
+}
+
+/* scanlines; a page that sets its own body background keeps that */
+[data-cbase-theme="amber"] body {
+  background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 136, 0, 0.04) 2px, rgba(255, 136, 0, 0.04) 4px);
+}
+
+[data-cbase-theme="amber"] ::selection {
+  background: #ff8800;
+  color: #000000;
+}
+
+[data-cbase-theme="amber"] :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6) {
+  font-family: "Orbitron", var(--cbase-font);
+  color: #ffaa44;
+  letter-spacing: 0.06em;
+}
+
+[data-cbase-theme="amber"] :is(h1, .h1) {
+  font-weight: 900;
+  color: #ff8800;
+  text-shadow: 0 0 20px rgba(255, 136, 0, 0.6), 0 0 40px rgba(255, 136, 0, 0.3);
+}
+
+[data-cbase-theme="amber"] :is(h2, .h2) {
+  text-transform: uppercase;
+}
+
+/* white is the highlight colour of the blue theme */
+[data-cbase-theme="amber"] .text-white {
+  color: #ffcc66 !important;
+}
+
+[data-cbase-theme="amber"] .text-muted {
+  color: #b36a1a !important;
+}
+
+[data-cbase-theme="amber"] .text-bg-primary {
+  color: #000000 !important;
+}
+
+/* navigation */
+[data-cbase-theme="amber"] .navbar {
+  --bs-navbar-color: #ff8800;
+  --bs-navbar-hover-color: #ffcc66;
+  --bs-navbar-active-color: #ffcc66;
+  --bs-navbar-brand-color: #ffaa44;
+  --bs-navbar-brand-hover-color: #ffcc66;
+  --bs-navbar-toggler-border-color: #ff6600;
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ff8800' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-color: #000000 !important;
+  border-bottom: 2px solid #ff6600;
+  box-shadow: 0 0 20px rgba(255, 136, 0, 0.2);
+}
+
+[data-cbase-theme="amber"] .navbar-brand {
+  font-family: "Orbitron", var(--cbase-font);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+[data-cbase-theme="amber"] .dropdown-menu {
+  --bs-dropdown-bg: #000000;
+  --bs-dropdown-color: #ff8800;
+  --bs-dropdown-border-color: #ff6600;
+  --bs-dropdown-link-color: #ff8800;
+  --bs-dropdown-link-hover-color: #ffcc66;
+  --bs-dropdown-link-hover-bg: rgba(255, 136, 0, 0.2);
+  --bs-dropdown-link-active-color: #000000;
+  --bs-dropdown-link-active-bg: #ff8800;
+  --bs-dropdown-divider-bg: rgba(255, 102, 0, 0.3);
+  box-shadow: 0 0 15px rgba(255, 136, 0, 0.3);
+}
+
+/* cards like the sections of the model: glowing frame, a touch of amber */
+[data-cbase-theme="amber"] .card {
+  --bs-card-bg: rgba(255, 136, 0, 0.05);
+  --bs-card-color: #ff8800;
+  --bs-card-border-color: #ff6600;
+  --bs-card-cap-bg: rgba(255, 136, 0, 0.1);
+  --bs-card-cap-color: #ffaa44;
+  box-shadow: 0 0 12px rgba(255, 136, 0, 0.15), inset 0 0 20px rgba(255, 136, 0, 0.04);
+}
+
+[data-cbase-theme="amber"] .card.transparent {
+  background: rgba(255, 136, 0, 0.05);
+  border-color: #ff6600;
+}
+
+[data-cbase-theme="amber"] a.card:hover {
+  border-color: #ffaa44;
+  box-shadow: 0 0 22px rgba(255, 136, 0, 0.4), inset 0 0 20px rgba(255, 136, 0, 0.1);
+}
+
+/* primary button: black on amber; neutral button: a frame that fills on hover */
+[data-cbase-theme="amber"] .btn {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+[data-cbase-theme="amber"] .btn-link {
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+[data-cbase-theme="amber"] .btn-primary {
+  --bs-btn-color: #000000;
+  --bs-btn-bg: #ff8800;
+  --bs-btn-border-color: #ff8800;
+  --bs-btn-hover-color: #000000;
+  --bs-btn-hover-bg: #ffaa44;
+  --bs-btn-hover-border-color: #ffaa44;
+  --bs-btn-active-color: #000000;
+  --bs-btn-active-bg: #ff6600;
+  --bs-btn-active-border-color: #ff6600;
+  --bs-btn-disabled-color: #000000;
+  --bs-btn-disabled-bg: #ff8800;
+  --bs-btn-disabled-border-color: #ff8800;
+  --bs-btn-focus-shadow-rgb: 255, 204, 102;
+}
+
+[data-cbase-theme="amber"] :is(.btn-secondary, .btn-default, .btn-outline-primary) {
+  --bs-btn-color: #ff8800;
+  --bs-btn-bg: rgba(0, 0, 0, 0.85);
+  --bs-btn-border-color: #ff8800;
+  --bs-btn-hover-color: #ffcc66;
+  --bs-btn-hover-bg: rgba(255, 136, 0, 0.2);
+  --bs-btn-hover-border-color: #ff8800;
+  --bs-btn-active-color: #ffcc66;
+  --bs-btn-active-bg: rgba(255, 136, 0, 0.3);
+  --bs-btn-active-border-color: #ffaa44;
+  --bs-btn-disabled-color: #a35200;
+  --bs-btn-disabled-bg: rgba(0, 0, 0, 0.85);
+  --bs-btn-disabled-border-color: #a35200;
+  --bs-btn-focus-shadow-rgb: 255, 136, 0;
+  background-image: none;
+  text-shadow: none;
+  box-shadow: 0 0 10px rgba(255, 136, 0, 0.2);
+}
+
+/* Cyborg sets the background of these buttons directly, not through the variables */
+[data-cbase-theme="amber"] :is(.btn-primary, .btn-secondary, .btn-default, .btn-outline-primary) {
+  background-color: var(--bs-btn-bg);
+}
+
+[data-cbase-theme="amber"] :is(.btn-primary, .btn-secondary, .btn-default, .btn-outline-primary):hover {
+  background-color: var(--bs-btn-hover-bg);
+  box-shadow: 0 0 15px rgba(255, 136, 0, 0.5);
+}
+
+[data-cbase-theme="amber"] :is(.btn-primary, .btn-secondary, .btn-default, .btn-outline-primary):active {
+  background-color: var(--bs-btn-active-bg);
+}
+
+[data-cbase-theme="amber"] :is(.btn-primary, .btn-secondary, .btn-default, .btn-outline-primary):is(:disabled, .disabled) {
+  background-color: var(--bs-btn-disabled-bg);
+  box-shadow: none;
+}
+
+/* forms: black fields with an amber frame, like .terminal */
+/* Cyborg fields have no border; :where() keeps this as weak as a plain class
+   rule, so a site's own border width still wins */
+:where([data-cbase-theme="amber"]) :is(.form-control, .form-select) {
+  border-width: 1px;
+  border-style: solid;
+}
+
+[data-cbase-theme="amber"] :is(.form-control, .form-select) {
+  background-color: #000000;
+  border-color: #ff8800;
+  color: #ffcc66;
+  caret-color: #ffcc66;
+  color-scheme: dark;
+}
+
+[data-cbase-theme="amber"] :is(.form-control, .form-select):focus {
+  background-color: #000000;
+  border-color: #ffcc66;
+  color: #ffcc66;
+  box-shadow: 0 0 10px rgba(255, 136, 0, 0.6);
+}
+
+[data-cbase-theme="amber"] .form-control::placeholder {
+  color: #a35200;
+  opacity: 1;
+}
+
+[data-cbase-theme="amber"] .form-select {
+  --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffcc66' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+
+[data-cbase-theme="amber"] .form-label {
+  color: #ffcc66;
+}
+
+[data-cbase-theme="amber"] .form-check-input:checked {
+  background-color: #ff8800;
+  border-color: #ff8800;
+}
+
+/* tables */
+[data-cbase-theme="amber"] .table {
+  --bs-table-color: #ffcc66;
+  --bs-table-border-color: rgba(255, 102, 0, 0.3);
+}
+
+[data-cbase-theme="amber"] #tablehead th,
+[data-cbase-theme="amber"] .table thead th {
+  color: #ffaa44;
+}
+
+/* the terminal and what else was blue */
+[data-cbase-theme="amber"] .terminal {
+  border-color: #ff8800;
+  box-shadow: 0 0 12px rgba(255, 136, 0, 0.2);
+}
+
+[data-cbase-theme="amber"] .terminal div {
+  color: #ffcc66;
+}
+
+[data-cbase-theme="amber"] .terminal div.thanks,
+[data-cbase-theme="amber"] .terminal div.thanks a {
+  color: #00ff00;
+}
+
+[data-cbase-theme="amber"] .terminal div.protest,
+[data-cbase-theme="amber"] .terminal div.protest a {
+  color: #ff3300;
+}
+
+[data-cbase-theme="amber"] .mpdstatus {
+  color: #ffcc66;
+}
+
+[data-cbase-theme="amber"] .pagination {
+  --bs-pagination-color: #ff8800;
+  --bs-pagination-bg: #000000;
+  --bs-pagination-border-color: #ff6600;
+  --bs-pagination-hover-color: #ffcc66;
+  --bs-pagination-hover-bg: rgba(255, 136, 0, 0.2);
+  --bs-pagination-hover-border-color: #ff8800;
+  --bs-pagination-active-color: #000000;
+  --bs-pagination-active-bg: #ff8800;
+  --bs-pagination-active-border-color: #ff8800;
+  --bs-pagination-disabled-color: #a35200;
+  --bs-pagination-disabled-bg: #000000;
+  --bs-pagination-disabled-border-color: rgba(255, 102, 0, 0.3);
+}
+
+[data-cbase-theme="amber"] .list-group {
+  --bs-list-group-color: #ff8800;
+  --bs-list-group-bg: rgba(255, 136, 0, 0.05);
+  --bs-list-group-border-color: rgba(255, 102, 0, 0.45);
+  --bs-list-group-action-color: #ff8800;
+  --bs-list-group-action-hover-color: #ffcc66;
+  --bs-list-group-action-hover-bg: rgba(255, 136, 0, 0.2);
+  --bs-list-group-action-active-color: #ffcc66;
+  --bs-list-group-action-active-bg: rgba(255, 136, 0, 0.3);
+  --bs-list-group-active-color: #000000;
+  --bs-list-group-active-bg: #ff8800;
+  --bs-list-group-active-border-color: #ff8800;
+}
+
+[data-cbase-theme="amber"] .nav-pills {
+  --bs-nav-pills-link-active-color: #000000;
+  --bs-nav-pills-link-active-bg: #ff8800;
+}
+
+[data-cbase-theme="amber"] .progress {
+  --bs-progress-bg: rgba(255, 136, 0, 0.15);
+  --bs-progress-bar-color: #000000;
+  --bs-progress-bar-bg: #ff8800;
+}

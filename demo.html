@@ -6,7 +6,9 @@
   <title>c-base-bootstrap demo</title>
   <link href="css/cyborg.min.css" rel="stylesheet">
   <link href="css/bootstrap.custom.css" rel="stylesheet">
+  <link href="css/c-base-amber.css" rel="stylesheet">
   <link href="css/glyphicons.css" rel="stylesheet">
+  <script src="js/c-base-theme.js"></script>
   <style>
     /* the dimmed station picture, as used by c-beam */
     body {
@@ -16,6 +18,13 @@
                   url("img/bg.jpg") center center / cover no-repeat fixed;
       background-color: #000;
     }
+    /* amber: scanlines and a dark rim instead of the picture */
+    [data-cbase-theme="amber"] body {
+      background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.8) 100%) fixed,
+                  repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 136, 0, 0.04) 2px, rgba(255, 136, 0, 0.04) 4px),
+                  #000;
+    }
+    .navbar button.nav-link { background: none; border: 0; }
   </style>
 </head>
 <body>
@@ -35,6 +44,12 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">API</a></li>
             </ul>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <button type="button" class="nav-link" data-cbase-theme-toggle title="switch the colour variant">colour:
+              <span class="cbase-if-default">blue</span><span class="cbase-if-amber">amber</span></button>
           </li>
         </ul>
       </div>
